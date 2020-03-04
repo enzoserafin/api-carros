@@ -2,11 +2,14 @@ let express = require('express');
 let app = express();
 let bodyParser = require('body-parser');
 
-
-app.use(bodyParser.urlencoded({ extended: false })); // Configura para ler dados do POST por form-urlencoded e application/json
+app.use(bodyParser.urlencoded({ extended: true })); // Configura para ler dados do POST por form-urlencoded e application/json
 
 app.use(bodyParser.urlencoded({limit: '10mb', extended: false }))
 app.use(bodyParser.json());
+
+// app.use(express.json({limit: '50mb'}));
+// app.use(express.urlencoded({limit: '50mb'}));
+
 app.use(express.static(__dirname + '/view')); // Permite utilizar arquivos estáticos na pasta view
 
 app.use('/api/carros', require('./routes/carros')); // Rotas
