@@ -1,6 +1,6 @@
 let AWS = require('aws-sdk');
-let accessKey = 'AKIARIACSLN2XIVU7KX7';
-let secretKey = '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';
+let accessKey = '';
+let secretKey = '';
 let bucket = 'livro-node';
 
 class S3Helper { // Classe utilitária para enviar arquivos para o S3
